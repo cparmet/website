@@ -15,9 +15,12 @@
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
 
       rel="stylesheet">
+
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <!-- Custom styles for this template -->
+	
+	<!-- Custom styles for this template -->
     <link href="css/resume.css" rel="stylesheet">
+
     <!-- .min -->
   </head>
   <body id="page-top">
@@ -49,18 +52,27 @@
           <h1 class="mb-0">CHAD <span class="text-primary">PARMET</span> </h1>
           <div class="subheading mb-5"><a href="mailto:chad@chadparmet.com">CHAD@CHADPARMET.com</a>
           </div>
-          <div class="social-icons"> <a href="https://www.linkedin.com/in/chad-parmet/"
-
-              target="_blank"> <i class="fab fa-linkedin-in"></i></a> <a href="https://github.com/cparmet"
-
-              target="_blank"> <i class="fab fa-github"></i> </a> </div>
+          <div class="social-icons">
+          	<a href="https://www.linkedin.com/in/chad-parmet/" target="_blank" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/cparmet" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
+			<a href="https://www.instagram.com/cparmet/" target="_blank" title="Instagram"> <i class="fab fa-instagram"></i> </a> </div>
         </div>
       </section>
       <hr class="m-0">
       <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
         <div class="my-auto">
           <h2 class="mb-5">PROJECTS</h2>
-          <h3 class="mb-0"><a href="https://www.kaggle.com/cparmet" target="_blank">Top
+          <h3 class="project-name">Machine learning and statistical modeling for symptom checking<br>
+            </a></h3>
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto flex-sm-fill"> <br>
+              <img src="img/sneeze.png" alt="Sneeze" style="height: 149px;">
+              </a> </div>
+            <div class="resume-date text-md-right"> <br>
+              <p class="project-details">I'm on a project prototyping machine learning & statistical models, combined with the best published evidence, to estimate the chances that you have a medical condition based on your symptoms.</p>
+              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Machine learning, statistics, Python (Pandas, Scikit-learn, JSON parsing), literature reviews (medical and computer science)</p>
+            </div>
+          </div>          <h3 class="project-name"><a href="https://www.kaggle.com/cparmet" target="_blank">Top
               20% finish in Kaggle competition personalized medicine<br>
             </a></h3>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -70,16 +82,16 @@
                   alt="MSK Personalized Medicine Kaggle Competition" style="width: 288px; height: 149px;">
               </a> </div>
             <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I built a model using natural language
+              <p class="project-details">I built machine learning models using natural language
                 processing (NLP) to predict the effects of genetic mutations on
                 cancer for a Memorial Sloan Kettering competition. I learned a
-                lot about cleaning messy text for machine learning. </p>
-              <p class="tools"><em>Tools</em>: machine learning (XGboost, LASSO,
+                lot about cleaning messy text. </p>
+              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Machine learning (XGboost, LASSO,
                 Elastic-net, Ridge, SVD, CV), NLP &amp;
-                text mining (TF-IDF, Regex), Scipy, Python</p>
+                text mining (TF-IDF, Regex), Python(Scikit-learn, Pandas, Numpy, Scipy)</p>
             </div>
           </div>
-          <h4 class="mb-0"> <a href="http://bella.chadparmet.com" target="_blank">citation
+          <h4 class="project-name"> <a href="http://bella.chadparmet.com" target="_blank">citation
               formatting with NLP</a> </h4>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto flex-sm-fill"> <br>
@@ -88,13 +100,13 @@
                   alt="Bella logo" style="width: 288px;"> </a></div>
             <div class="resume-date text-md-right"> <br>
               <p class="project-details">I made a web app for Healthwise to format research citations in our house style. We used it over 100 times in 2018. The most fun feature is an NLP algorithm to convert Title Case to Sentence case, a task that commercial reference software shrugs and punts. (As an example, open the link and try entering PMID 28859415.) I learned gobs about NLP and deployment to AWS.</p>
-              <p class="tools"><em>Tools:</em> NLP (NLTK, Truecasing), Text
-                mining, Python, APIs (PubMed), Flask, Amazon Web Services (AWS
+              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;NLP (NLTK, Truecasing), Text
+                mining, Python (Flask, PubMed API), Amazon Web Services (AWS
                 S3, Lambda), Biopython</p>
             </div>
           </div>
         </div>
-        <h3 class="mb-0"><a href="http://train.chadparmet.com" target="_blank">Predict
+        <h3 class="project-name"><a href="http://train.chadparmet.com" target="_blank">Predict
             traffic jams due to trains<br>
           </a></h3>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
@@ -108,12 +120,11 @@
               to forecast the next time a commuter train will stop
               traffic. Plan ahead and never be late for a haircut again! It
               taught me how to work responsibly with dates and times when deployed on the cloud.</p>
-            <p class="tools"><em>Tools:</em> JSON parsing, Python (Flask,
-              requests, datetime, pytz), AWS (S3, Lambda), APIs (MBTA), time
-              data</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Python (JSON parsing, Flask,
+              requests, datetime, pytz, MBTA API), AWS (S3, Lambda), time data</p>
           </div>
         </div>
-        <h3 class="mb-0">PowerBI dashboards and reports</h3>
+        <h3 class="project-name">PowerBI dashboards and reports</h3>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto flex-sm-fill"> <br>
             <img src="img/powerbi.png" alt="PowerBI Logo" style="width: 288px;">
@@ -122,11 +133,11 @@
             <p class="project-details">At Healthwise I respond to internal requests for data
               analyses, reports, and dashboards. I made a demo dashboard for a large hospital client.
               It's opened my eyes to the critical importance of understanding the provenance of the data inside and out.</p>
-            <p class="tools"><em>Tools:</em> PowerBI, Microsoft SQL Server,
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;PowerBI, Microsoft SQL Server,
               Excel</p>
           </div>
         </div>
-        <h3 class="mb-0"><a href="https://github.com/biopython/biopython/blob/master/CONTRIB.rst"
+        <h3 class="project-name"><a href="https://github.com/biopython/biopython/blob/master/CONTRIB.rst"
 
             target="_blank" title="Open the list of Biopython contributors in a new window"
 
@@ -145,14 +156,13 @@
               for biological computing. The accepted change enables a piece of Biopython to work on
               server-less deployments, such as AWS Lambda and Google Cloud
               Functions. Contributing to an open source project is a total joy. </p>
-            <p class="tools"><em>Tools:</em> Python (Biopython), AWS (Lambda),
-              GitHub, open source projects, APIs (PubMed/Entrez)</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Python (Biopython, unit testing, PubMed API), AWS (Lambda),
+              GitHub (pull requests, CI)</p>
           </div>
         </div>
-        <h3 class="mb-0"><a href="https://github.com/cparmet/AutoVerde" target="_blank"
+        <h3 class="project-name"><a href="https://github.com/cparmet/AutoVerde" target="_blank"
 
-            title="Open Autoverde on GitHub">Scrape the web for the best
-            electricity rates<br>
+            title="Open Autoverde on GitHub">Web scraping for electricity rates<br>
           </a></h3>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto flex-sm-fill"> <br>
@@ -168,8 +178,8 @@
               It taught me about web scraping (I’m still tickled that you can
               automate filling out forms), scheduling scripts, logging, and
               emailing in Python.</p>
-            <p class="tools"><em>Tools:</em>Web scraping (Beautiful Soup,
-              Selenium, UI automation), Python (Pandas, Flask), SendGrid.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Scraping & UI automation (Beautiful Soup,
+              Selenium), Python (Pandas, Flask, SendGrid)</p>
           </div>
         </div>
       </section>
