@@ -2,10 +2,34 @@
 <html lang="en">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Chad Parmet</title>
+    <script>
+      // Email obfuscation
+      document.addEventListener('DOMContentLoaded', function() {
+        const emailLinks = document.querySelectorAll('.email-obfuscated');
+        emailLinks.forEach(link => {
+          link.addEventListener('click', function(e) {
+            // Only process if we haven't already set the real email
+            if (!this.getAttribute('data-processed')) {
+              e.preventDefault();
+              const reversed = this.getAttribute('data-email');
+              const email = reversed.split('').reverse().join('');
+              this.setAttribute('href', 'mailto:' + email);
+              this.setAttribute('title', email);
+              this.setAttribute('data-processed', 'true');
+
+              // Small delay to ensure the click is processed
+              setTimeout(() => {
+                window.location.href = 'mailto:' + email;
+              }, 50);
+            }
+          }, false);
+        });
+      });
+    </script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -52,22 +76,18 @@
           <h1 class="mb-0">CHAD <span class="text-primary">PARMET</span></h1>
           <div class="subheading mb-4">
 		  <p><span class="h4">(He/Him)</span></p>
-		  <p>DATA SCIENTIST | ML | NLP | LLM </p>
+		  <p>DATA SCIENTIST</p>
           </div>  
           <div class="social-icons">
-		  <a href="mailto:chad@chadparmet.com" target="_blank"><i class="fas fa-envelope"></i></a>
           	<a href="https://www.linkedin.com/in/chad-parmet/" target="_blank" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/cparmet" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
-			      <a href="https://www.instagram.com/cparmet/" target="_blank" title="Instagram"> <i class="fab fa-instagram"></i> </a> 
-		  </div>
+            <a href="#" class="email-obfuscated" data-email="moc.temrapdahc@dahc" target="_blank"><i class="fas fa-envelope"></i></a>
+          </div>
       <div class="bio">
         <p>&nbsp;</p>
         <p>&nbsp;</p>
-        <p>👋 Hello! I’m a friendly data scientist with end-to-end experience solving problems for users with prediction, automation, and analytics. Before that, I looked for shipwrecks.</p> 
+        <p>👋 Hello! I’m a friendly, human-centered data scientist. I'm a listener, builder, an enemy of hype, and a problem-solver. I love gathering requirements, harnessing LLMs and ML, AI engineering and ML engineering, the "Opses" (LLMOps & MLOps), writing Python from rapid prototyping to production code, automating painful tasks, testing hypotheses, and measuring impact. But my favorite tool is the simplest one that can solve our problem.</p>
 	<br>
-        <p>I'm a listener, collaborator, builder, data product manager, detective, communicator, strategist, enemy of hype, and, most of all, a problem solver. I love using machine learning, natural language processing, large language models, simulation, analytics, statistics, literature reviews, and evidence-based thinking.</p>
-	<br>
-	<p>But my favorite tool is the simplest one that solves the problem!</p>
       </div>            
     </div>
     </section>
@@ -75,7 +95,19 @@
   <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
   <div class="my-auto">
     <h2 class="mb-5">PROJECTS</h2>
-	      <h3 class="project-name">Pandas Checks: Open source package<br></h3>
+    <h3 class="project-name">LLMs to extract data from documents<br></h3>
+	<div class="resume-item d-flex flex-column flex-md-row mb-5">
+	    <div class="resume-content mr-auto flex-sm-fill"> <br>
+	    <img src="img/pdf-reading.png"
+		alt="LLM document parsing" style="width: 288px"></a>
+	    </div>
+	    <div class="resume-date text-md-right"> <br>
+	    <p class="project-details">I created a flexible system that uses large language models (LLMs) to extract complex structured data from stacks of PDFs. It includes parallel processing, data validation, LLM observability, and tooling for rapid experiments and evaluation. The project has been a fabulous learning experience on how to optimize LLM quality and latency in a high-volume, tight-turnaround setting.</p>
+	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;LLMs (AWS Bedrock, Anthropic Claude, multimodal models, OCR), LLMOps, prompt engineering, MlFlow, Multiprocessing, Experiment management, LLM observability, Streamlit, uv</p>
+	    </div>
+	</div>
+
+    <h3 class="project-name">Pandas Checks: Open source package<br></h3>
 	<div class="resume-item d-flex flex-column flex-md-row mb-5">
 	    <div class="resume-content mr-auto flex-sm-fill"> <br>
 	    <a href="https://github.com/cparmet/pandas-checks" target="_blank"><img src="img/pandas-check-gh-social.jpg"

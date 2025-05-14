@@ -4,10 +4,37 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE)
  */
 
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   padding-top: 54px;
   color: #868e96;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Navigation */
+.navbar-toggler {
+  padding: 0.5rem 0.75rem;
+  font-size: 1.25rem;
+  line-height: 1;
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+}
+
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background: no-repeat center center;
+  background-size: 100% 100%;
 }
 
 @media (min-width: 992px) {
@@ -30,16 +57,45 @@ h6 {
 }
 
 h1 {
-  font-size: 6rem;
-  line-height: 5.5rem;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6rem;
+    line-height: 5.5rem;
+  }
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 3.5rem;
+  }
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+h3.project-name {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  h3 {
+    font-size: 2rem;
+  }
+  h3.project-name {
+    font-size: 2rem;
+  }
 }
 
 p.lead {
@@ -51,24 +107,53 @@ p.lead {
   text-transform: uppercase;
   font-weight: 500;
   font-family: 'Saira Extra Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  font-size: 2.25rem;
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .subheading {
+    font-size: 2.25rem;
+  }
+}
+
+.social-icons {
+  margin: 1.5rem 0;
 }
 
 .social-icons a {
   display: inline-block;
-  height: 3.5rem;
-  width: 3.5rem;
+  height: 3rem;
+  width: 3rem;
   background-color: #495057;
   color: #fff !important;
   border-radius: 100%;
   text-align: center;
-  font-size: 1.5rem;
-  line-height: 3.5rem;
-  margin-right: 1rem;
+  font-size: 1.25rem;
+  line-height: 3rem;
+  margin-right: 0.75rem;
+  transition: all 0.2s ease;
+}
+
+@media (min-width: 768px) {
+  .social-icons a {
+    height: 3.5rem;
+    width: 3.5rem;
+    font-size: 1.5rem;
+    line-height: 3.5rem;
+    margin-right: 1rem;
+  }
 }
 
 .social-icons a:last-child {
   margin-right: 0;
+}
+
+/* Email obfuscation */
+.email-obfuscated {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
 
 .social-icons a:hover {
@@ -84,9 +169,18 @@ p.lead {
 }
 
 .bio {
-  font-size: 1.25rem;
-  text-align: justify;
-  padding-left: 1rem;
+  font-size: 1.1rem;
+  text-align: left;
+  padding: 0 0.5rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .bio {
+    font-size: 1.25rem;
+    text-align: justify;
+    padding-left: 1rem;
+  }
 }
 
 .project-name {
@@ -97,22 +191,53 @@ p.lead {
 
 .project-details {
   font-size: 1rem;
-  text-align: justify;
-  padding-left: 1rem;
+  text-align: left;
+  padding: 0.5rem;
+  line-height: 1.7;
+}
+
+@media (min-width: 768px) {
+  .project-details {
+    text-align: justify;
+    padding-left: 1rem;
+  }
 }
 
 .tools {
   font-family: 'Roboto';
-  font-size: 1.1rem;
+  font-size: 0.95rem;
   text-align: left;
   font-weight: 350;
-  padding-left: 1rem;
+  padding: 0.5rem;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .tools {
+    font-size: 1.1rem;
+    padding-left: 1rem;
+  }
 }
 
 #sideNav .navbar-nav .nav-item .nav-link {
   font-weight: 800;
   letter-spacing: 0.05rem;
   text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  display: block;
+}
+
+#sideNav .navbar-nav .nav-item {
+  margin-bottom: 0.5rem;
+}
+
+@media (min-width: 992px) {
+  #sideNav .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
 }
 
 #sideNav .navbar-toggler:focus {
@@ -176,13 +301,33 @@ p.lead {
 }
 
 section.resume-section {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
-  max-width: 75rem;
+  padding: 3rem 1rem !important;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    padding: 5rem 2rem !important;
+    max-width: 75rem;
+    margin: 0 auto;
+  }
 }
 
 section.resume-section .resume-item .resume-date {
   min-width: none;
+  padding: 0.5rem;
+}
+
+.resume-item {
+  margin-bottom: 2.5rem;
+}
+
+.resume-item img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 
 @media (min-width: 768px) {
