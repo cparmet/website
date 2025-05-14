@@ -6,6 +6,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>Chad Parmet</title>
+    <script>
+      // Email deobfuscation
+      document.addEventListener('DOMContentLoaded', function() {
+        const emailLinks = document.querySelectorAll('.email-obfuscated');
+        emailLinks.forEach(link => {
+          const reversed = link.getAttribute('data-email');
+          const email = reversed.split('').reverse().join('');
+          link.setAttribute('href', 'mailto:' + email);
+          link.setAttribute('title', email);
+        });
+      });
+    </script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
@@ -55,9 +67,9 @@
 		  <p>DATA SCIENTIST | ML | NLP | LLM </p>
           </div>  
           <div class="social-icons">
-		  <a href="mailto:chad@chadparmet.com" target="_blank"><i class="fas fa-envelope"></i></a>
           	<a href="https://www.linkedin.com/in/chad-parmet/" target="_blank" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/cparmet" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
+            <a href="#" class="email-obfuscated" data-email="moc.temrapdahc@dahc" target="_blank"><i class="fas fa-envelope"></i></a>
           </div>
       <div class="bio">
         <p>&nbsp;</p>

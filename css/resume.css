@@ -150,6 +150,12 @@ p.lead {
   margin-right: 0;
 }
 
+/* Email obfuscation */
+.email-obfuscated {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
 .social-icons a:hover {
   background-color: #BD5D38;
 }
