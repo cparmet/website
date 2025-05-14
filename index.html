@@ -7,14 +7,26 @@
     <meta name="author" content="">
     <title>Chad Parmet</title>
     <script>
-      // Email deobfuscation
+      // Email obfuscation
       document.addEventListener('DOMContentLoaded', function() {
         const emailLinks = document.querySelectorAll('.email-obfuscated');
         emailLinks.forEach(link => {
-          const reversed = link.getAttribute('data-email');
-          const email = reversed.split('').reverse().join('');
-          link.setAttribute('href', 'mailto:' + email);
-          link.setAttribute('title', email);
+          link.addEventListener('click', function(e) {
+            // Only process if we haven't already set the real email
+            if (!this.getAttribute('data-processed')) {
+              e.preventDefault();
+              const reversed = this.getAttribute('data-email');
+              const email = reversed.split('').reverse().join('');
+              this.setAttribute('href', 'mailto:' + email);
+              this.setAttribute('title', email);
+              this.setAttribute('data-processed', 'true');
+
+              // Small delay to ensure the click is processed
+              setTimeout(() => {
+                window.location.href = 'mailto:' + email;
+              }, 50);
+            }
+          }, false);
         });
       });
     </script>
