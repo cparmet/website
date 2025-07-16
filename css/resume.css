@@ -78,7 +78,7 @@ p.lead {
 }
 
 .social-icons a:hover {
-  background-color: #BD5D38;
+  background-color: #4646e0;
 }
 
 .dev-icons {
@@ -86,7 +86,7 @@ p.lead {
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: #BD5D38;
+  color: #4646e0;
 }
 
 .bio {
@@ -102,8 +102,13 @@ p.lead {
 }
 
 .project-details {
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: justify;
+  padding-left: 1rem;
+}
+
+.open-source-bullets {
+  font-size: 1.3rem;
   padding-left: 1rem;
 }
 
@@ -208,15 +213,15 @@ section.resume-section .resume-item .resume-date {
 }
 
 .bg-primary {
-  background-color: #BD5D38 !important;
+  background-color: #4646e0 !important;
 }
 
 .text-primary {
-  color: #BD5D38 !important;
+  color: #4646e0 !important;
 }
 
 a {
-  color: #BD5D38;
+  color: #4646e0;
 }
 
 a:hover, a:focus, a:active {

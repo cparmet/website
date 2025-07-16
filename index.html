@@ -1,322 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <title>Chad Parmet</title>
-    <script>
-      // Email obfuscation
-      document.addEventListener('DOMContentLoaded', function() {
-        const emailLinks = document.querySelectorAll('.email-obfuscated');
-        emailLinks.forEach(link => {
-          link.addEventListener('click', function(e) {
-            // Only process if we haven't already set the real email
-            if (!this.getAttribute('data-processed')) {
-              e.preventDefault();
-              const reversed = this.getAttribute('data-email');
-              const email = reversed.split('').reverse().join('');
-              this.setAttribute('href', 'mailto:' + email);
-              this.setAttribute('title', email);
-              this.setAttribute('data-processed', 'true');
 
-              // Small delay to ensure the click is processed
-              setTimeout(() => {
-                window.location.href = 'mailto:' + email;
-              }, 50);
-            }
-          }, false);
-        });
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Chad Parmet</title>
+  <script>
+    // Email obfuscation
+    document.addEventListener('DOMContentLoaded', function () {
+      const emailLinks = document.querySelectorAll('.email-obfuscated');
+      emailLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          // Only process if we haven't already set the real email
+          if (!this.getAttribute('data-processed')) {
+            e.preventDefault();
+            const reversed = this.getAttribute('data-email');
+            const email = reversed.split('').reverse().join('');
+            this.setAttribute('href', 'mailto:' + email);
+            this.setAttribute('title', email);
+            this.setAttribute('data-processed', 'true');
+
+            // Small delay to ensure the click is processed
+            setTimeout(() => {
+              window.location.href = 'mailto:' + email;
+            }, 50);
+          }
+        }, false);
       });
-    </script>
-    <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom fonts for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700"
+    });
+  </script>
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom fonts for this template -->
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
 
-      rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i"
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
 
-      rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/resume.css" rel="stylesheet">
 
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-	
-	<!-- Custom styles for this template -->
-    <link href="css/resume.css" rel="stylesheet">
+  <!-- .min -->
+</head>
 
-    <!-- .min -->
-  </head>
-  <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="#page-top"> <span class="d-block d-lg-none">Chad Parmet</span> <span class="d-none d-lg-block"> <img
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top"> <span class="d-block d-lg-none">Chad Parmet</span> <span
+        class="d-none d-lg-block"> <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg"
+          alt=""> </span> </a> <button class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+      aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav">
+        <li class="nav-item"><br>
+        </li>
+        <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#about">About me</a>
+        </li>
+        <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
+        </li>
+          <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#open-source">Open source</a>
+        </li>
 
-            class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg"
-
-            alt=""> </span> </a> <button class="navbar-toggler" type="button"
-
-        data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-
-        aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav">
-          <li class="nav-item"><br>
-          </li>
-          <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#about">About me</a>
-          </li>
-          <li class="nav-item"> <a class="nav-link js-scroll-trigger" href="#projects">Projects</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <div class="container-fluid p-0">
-      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
-        <div class="my-auto">
-          <h1 class="mb-0">CHAD <span class="text-primary">PARMET</span></h1>
-          <div class="subheading mb-4">
-		  <p>DATA SCIENTIST</p>
-          </div>  
-          <div class="social-icons">
-          	<a href="https://www.linkedin.com/in/chad-parmet/" target="_blank" title="LinkedIn"> <i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/cparmet" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
-            <a href="#" class="email-obfuscated" data-email="moc.temrapdahc@dahc" target="_blank"><i class="fas fa-envelope"></i></a>
-          </div>
-      <div class="bio">
-        <p>&nbsp;</p>
-        <p>&nbsp;</p>
-        <p>👋 Hello! I’m a friendly, human-centered data scientist. I'm a listener, builder, an enemy of hype, and a problem-solver. I love gathering requirements, harnessing LLMs and ML, AI engineering and ML engineering, the "Opses" (LLMOps & MLOps), writing Python from rapid prototyping to production code, automating painful tasks, testing hypotheses, and measuring impact. But my favorite tool is the simplest one that can solve our problem.</p>
-	<br>
-      </div>            
+      </ul>
     </div>
-    </section>
-  <hr class="m-0">
-  <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
-  <div class="my-auto">
-    <h2 class="mb-5">PROJECTS</h2>
-    <h3 class="project-name">LLMs to extract data from documents<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <img src="img/pdf-reading.png"
-		alt="LLM document parsing" style="width: 288px"></a>
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I created a flexible system that uses large language models (LLMs) to extract complex structured data from stacks of PDFs. It includes parallel processing, data validation, LLM observability, and tooling for rapid experiments and evaluation. The project has been a fabulous learning experience on how to optimize LLM quality and latency in a high-volume, tight-turnaround setting.</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;LLMs (AWS Bedrock, Anthropic Claude, multimodal models, OCR), LLMOps, prompt engineering, MlFlow, Multiprocessing, Experiment management, LLM observability, Streamlit, uv</p>
-	    </div>
-	</div>
-    <h3 class="project-name">Chatbot prototypes<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <img src="img/chatbot.jpg"
-		alt="LLM document parsing" style="width: 288px"></a>
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I made rapid proof-of-concept web apps for a variety of potential chatbot use cases, to support strategic exploration of the technology. To enable quick iteration and pivoting, I made a simple configuration system to usher conversations through an arbitrary sequence of stages, dynamically alternating between LLM and scripted interactions. It was great to get hands-on with the LangChain library and work through some user experience and user interface considerations that come with human-machine conversations. 👩🏽💬 🤖💬</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;LLMs (Anthropic Claude), LangChain, prompt engineering, Streamlit, uv</p>
-	    </div>
-	</div>
-
-    <h3 class="project-name">Pandas Checks: Open source package<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <a href="https://github.com/cparmet/pandas-checks" target="_blank"><img src="img/pandas-check-gh-social.jpg"
-		alt="Pandas Check package" style="width: 288px"></a>
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I created an open source package, <a href="https://github.com/cparmet/pandas-checks" target="_blank">Pandas Checks</a>, to support development and maintenance of data pipelines in Python. It's a little doctor's bag of tools to help data scientists, data engineers, and other data friends check the health of their data plumbing. These tools let you inspect and validate the results of individual steps of data processing on the fly, without needing to break apart and dirty up your functional code. It was my first open source package and I loved the new skills it taught me, including test automation, package documentation, release management, and GitHub automation.</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Pandas, method chains, functional programming, test automation (nox, pytest), GitHub Actions, package development (poetry, mkdocs, PyPi), precommit</p>
-	    </div>
-	</div>
-	      <h3 class="project-name">Finite News: mindful, AI-assisted news<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <a href="https://github.com/cparmet/finite-news" target="_blank"><img src="img/finite.png"
-
-		alt="Internet distractions" style="width: 288px; height: 149px;"></a>
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I'm happy to pay for subscriptions to quality news sources, but their websites are filled with so many distractions and attention vampires! So I created <a href="https://github.com/cparmet/finite-news" target="_blank">Finite News</a>, an automated service that delivers the day's news without the noise. It uses a couple large language models (LLMs), real-time APIs, feeds, web scraping to gather and process content. A daily issue can report the latest happenings in your town, state, country, planet, and universe; forecast your local weather; give you a heads up on upcoming events in your area; track stocks of interest; alert you if your favorite NBA or NHL teams play tonight and give you last night's box scores (go Celtics 🍀!); and get new content such as Webb telescope photos and XKCD comics. The results are filtered by rules and an LLM that lasso the most informative content and lower the noise level.</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Python, Google Cloud Platform (Cloud Run Jobs, Cloud Build, Artifact Registry, Cloud Storage), AWS (Sagemaker, S3), HuggingFace sentence transformers, LLMs, OpenAI API, Selenium/Chromedriver, BeautifulSoup, Sendgrid, UV</p>
-	    </div>
-	</div>
-    <h3 class="project-name">Clinical trial process simulation<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <img src="img/staff.jpg"
-
-		alt="Clinical trial population" style="width: 288px; height: 149px;">
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I worked on simulation and optimization of clinical trial operations. I loved working with on-the-ground staff to learn about site operations and leveraging process simulation and optimization methods to build them an interactive web app to help them try to meet their goals and anticipate challenges.</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Agent-based models, discrete event simulation (Simpy), optimization (scikit-opt), web app (Dash), data visualization (plotly), statistics, queuing theory, Python (Pandas, Numpy)</p>
-	    </div>
-	</div>
-	<h3 class="project-name">Data science for study diversity<br></h3>
-	<div class="resume-item d-flex flex-column flex-md-row mb-5">
-	    <div class="resume-content mr-auto flex-sm-fill"> <br>
-	    <img src="img/trials.png"
-
-		alt="Clinical trial population" style="width: 288px; height: 149px;">
-	    </div>
-	    <div class="resume-date text-md-right"> <br>
-	    <p class="project-details">I developed data tools -- machine learning models, metrics, and interactive dashboards -- to measure and predict the diversity of clinical trials. It taught me gobs about working with Census and geospatial data and making predictive models with hiearchical data.</p>
-	    <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (HistGBM, Random Forest), geospatial data (GIS), Census data, socioeconomics and health datasets, statistics, Python (Pandas, Numpy, scikit-learn)</p>
-	    </div>
-	</div>
-    <h3 class="project-name">A document similarity tool that saved 400-500 hours<br></h3>
-    <div class="resume-item d-flex flex-column flex-md-row mb-5">
-      <div class="resume-content mr-auto flex-sm-fill"> <br>
-        <img src="img/thompson.png"
-
-            alt="Document similarity image" style="width: 288px; height: 149px;">
+  </nav>
+  <div class="container-fluid p-0">
+    <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+      <div class="my-auto">
+        <h1 class="mb-0">CHAD <span class="text-primary">PARMET</span></h1>
+        <div class="subheading mb-4">
+          <p>lead data scientist | AI engineer</p>
         </div>
-      <div class="resume-date text-md-right"> <br>
-        <p class="project-details">I made a tool to identify similar or duplicate medical documents, using their text and metadata. Its first application was to suggest similar content from a large library, which is projected to make a manual workflow 3x as fast and save humans 400-500 hours. It's also being used to de-duplicate that library and to map internal content to external content. This project gave me hands-on experience with Doc2Vec and vector and set similarity statistics.</p>
-        <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Doc2Vec (Gensim), NLP (spaCy), statistics, Python (Pandas, Numpy), Excel</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/chad-parmet/" target="_blank" title="LinkedIn"> <i
+              class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/cparmet" target="_blank" title="GitHub"> <i class="fab fa-github"></i> </a>
+          <a href="#" class="email-obfuscated" data-email="moc.temrapdahc@dahc" target="_blank"><i
+              class="fas fa-envelope"></i></a>
+        </div>
       </div>
-    </div>
-     <h3 class="project-name">A data science tool that saved 1-2 years<br></h3>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <img src="img/cupid.svg"
-
-                  alt="Relationships graph" style="width: 288px; height: 149px;">
-              </div>
-            <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I created a tool to help grow an ontology, which is a kind of tree of relationships between concepts in medicine. An example of such a relationship is <i>[insulin] -treats-> [type 2 diabetes]</i>. These relationships are invaluable for powering APIs and search for medical content, but they're laborious and expensive to create because of the expertise required. The tool I built, called Cupid because it makes new relationships 💘, reads thousands of medical documents to find concepts and relationships between them. It proposes statements for doctors to review. Having first drafts generated by a machine saved an estimated 1-2 years compared with the doctors coming up with all these relationships manually. The project educated me about some pitfalls to steer clear of when doing entity recognition on medical text.</p>
-              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;NLP &amp; text mining (spaCy, Regex), Python (Pandas, Numpy), SOLR API, Excel</p>
-            </div>
-          </div>
-      <h3 class="project-name">Metadata classification<br></h3>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <img src="img/classifier.jpg"
-
-                  alt="Classification image" style="width: 288px; height: 149px;">
-              </div>
-            <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I created a hybrid system that assigns two kinds of metadata to patient education documents, based on their titles. One piece of metadata is assigned by a machine learning model (text classifier) trained to identify 70 possible categories of documents. The other piece of metadata, with 6000 possible categories, is assigned through text processing and a live taxonomy. I learned tons, including how to track machine learning experiments more formally (MLFlow is rad!) and data augmentation for text.</p>
-              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (Scikit-learn, MLFlow, random forests, logistic regression), NLP &amp; text mining (spaCy, Regex), Python (Pandas, Numpy), SOLR API, Excel</p>
-            </div>
-          </div>
-      <h3 class="project-name">White sharks and island rentals<br>
-          </h3>
+    </section>
+    <hr class="m-0">
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="projects">
+      <div class="my-auto">
+        <h2 class="mb-5">PROJECTS</h2>
+        <h3 class="project-name">LLMs for intelligent document processing<br></h3>
         <div class="resume-item d-flex flex-column flex-md-row mb-5">
           <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <img src="img/nantucket.jpg" alt="Nantucket landscape" style="width: 288px;">
-            </a> </div>
+            <img src="img/pdf-reading.png" alt="LLM document parsing" style="width: 288px"></a>
+          </div>
           <div class="resume-date text-md-right"> <br>
-            <p class="project-details">I worked as a consultant for Community Data Platforms. I helped scope a project to track great white sharks, with the goal of surfacing insights for public safety and conservation. I also trained a model to estimate prices for rental homes on Nantucket. The most memorable lesson for me was a keen observation by an economist collaborator that markets may contain multiple sub-markets with different dynamics.</p>
-            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Machine learning (random forest, linear regression), Python (Scikit-learn, Pandas, Numpy)</p>
+            <p class="project-details">I created a flexible internal platform that uses large language models (LLMs) to extract
+              complex structured data from stacks of PDFs. It includes parallel processing, data validation, LLM
+              observability, and tooling for rapid experiments and evaluation. The platform has had a number of use cases (and growing) for generating new product features and automating laborious processes. It's been a fabulous learning
+              experience on how to optimize LLM quality and latency in a high-volume, tight-turnaround setting.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;LLMs (AWS Bedrock, Anthropic Claude, multimodal
+              models, OCR), LLMOps, prompt engineering, MlFlow, Multiprocessing, Experiment management, LLM
+              observability, Streamlit, uv</p>
           </div>
         </div>
-      <h3 class="project-name">Top 20% finish in machine learning competition about cancer<br></h3>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <a href="https://www.kaggle.com/cparmet" target="_blank"> <img src="img/msk.png"
-
-                  alt="MSK Personalized Medicine Kaggle Competition" style="width: 288px; height: 149px;">
-              </a> </div>
-            <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I built <a href="https://www.kaggle.com/cparmet" target="_blank" title="Open my Kaggle profile">machine learning models</a> using natural language processing (NLP) to predict the effects of different genetic mutations on cancer. The models worked by reading medical journal articles. This Kaggle competition was run by Memorial Sloan Kettering to help them make progress on techniques for personalized medicine. The competition taught me a boatload about the benefits of labor-intensive cleaning of messy text, and nifty ML tricks shared by the generous community of contestants.</p>
-              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (XGboost, LASSO,
-                Elastic-net, Ridge, SVD, CV), NLP &amp;
-                text mining (TF-IDF, Regex), Python (Scikit-learn, Pandas, Numpy, Scipy)</p>
-            </div>
+        <h3 class="project-name">Chatbot prototypes<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/chatbot.jpg" alt="LLM document parsing" style="width: 288px"></a>
           </div>
-      <h3 class="project-name">Triage chatbot discovery<br></h3>
-          <div class="resume-item d-flex flex-column flex-md-row mb-5">
-            <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <img src="img/digital-health.jpg" alt="Clinical predictive models" style="width: 288px; height: 149px;">
-              </div>
-            <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I collaborated with the innovation department at a academic medical center partner to explore how to wire the brain of a chatbot to help triage patients. The exploration taught me about triage pathways, the statistics of diagnosis tests, and the huge number of patient variables to consider in evidence-based triage decisions.</p>
-              <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Statistics, machine learning (CART), literature reviews in medicine and computer science</p>
-            </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I made rapid proof-of-concept web apps for a variety of potential chatbot use
+              cases, to support strategic exploration of the technology. To enable quick iteration and pivoting, I made
+              a simple configuration system to usher conversations through an arbitrary sequence of stages, dynamically
+              alternating between LLM and scripted interactions. It was great to get hands-on with the LangChain library
+              and work through some user experience and user interface considerations that come with human-machine
+              conversations. 👩🏽💬 🤖💬</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;LLMs (Anthropic Claude), LangChain, prompt
+              engineering, Streamlit, uv</p>
           </div>
+        </div>
 
-          <h3 class="project-name"> Citation formatter with a twist</a> </h4>
+        <h3 class="project-name">Pandas Checks: Open source package<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <a href="https://github.com/cparmet/pandas-checks" target="_blank"><img src="img/pandas-check-gh-social.jpg"
+                alt="Pandas Check package" style="width: 288px"></a>
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I created an open source package, <a
+                href="https://github.com/cparmet/pandas-checks" target="_blank">Pandas Checks</a>, to support
+              development and maintenance of data pipelines in Python. It's a little doctor's bag of tools to help data
+              scientists, data engineers, and other data friends check the health of their data plumbing. These tools
+              let you inspect and validate the results of individual steps of data processing on the fly, without
+              needing to break apart and dirty up your functional code. It was my first open source package and I loved
+              the new skills it taught me, including test automation, package documentation, release management, and
+              GitHub automation.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Pandas, method chains, functional programming,
+              test automation (nox, pytest), GitHub Actions, package development (poetry, mkdocs, PyPi), precommit</p>
+          </div>
+        </div>
+        <h3 class="project-name">Finite News: mindful, AI-assisted news<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <a href="https://github.com/cparmet/finite-news" target="_blank"><img src="img/finite.png"
+                alt="Internet distractions" style="width: 288px; height: 149px;"></a>
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I'm happy to pay for subscriptions to quality news sources, but their websites
+              are filled with so many distractions and attention vampires! So I created <a
+                href="https://github.com/cparmet/finite-news" target="_blank">Finite News</a>, an automated service that
+              delivers the day's news without the noise. It uses a couple large language models (LLMs), real-time APIs,
+              feeds, web scraping to gather and process content. A daily issue can report the latest happenings in your
+              town, state, country, planet, and universe; forecast your local weather; give you a heads up on upcoming
+              events in your area; track stocks of interest; alert you if your favorite NBA or NHL teams play tonight
+              and give you last night's box scores (go Celtics 🍀!); and get new content such as Webb telescope photos
+              and XKCD comics. The results are filtered by rules and an LLM that lasso the most informative content and
+              lower the noise level.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Python, Google Cloud Platform (Cloud Run Jobs,
+              Cloud Build, Artifact Registry, Cloud Storage), AWS (Sagemaker, S3), HuggingFace sentence transformers,
+              LLMs, OpenAI API, Selenium/Chromedriver, BeautifulSoup, Sendgrid, UV</p>
+          </div>
+        </div>
+        <h3 class="project-name">Clinical trial process simulation<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/staff.jpg" alt="Clinical trial population" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I worked on simulation and optimization of clinical trial operations. I loved
+              working with on-the-ground staff to learn about site operations and leveraging process simulation and
+              optimization methods to build them an interactive web app to help them try to meet their goals and
+              anticipate challenges.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Agent-based models, discrete event simulation
+              (Simpy), optimization (scikit-opt), web app (Dash), data visualization (plotly), statistics, queuing
+              theory, Python (Pandas, Numpy)</p>
+          </div>
+        </div>
+        <h3 class="project-name">Data science for study diversity<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/trials.png" alt="Clinical trial population" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I developed data tools -- machine learning models, metrics, and interactive
+              dashboards -- to measure and predict the diversity of clinical trials. It taught me gobs about working
+              with Census and geospatial data and making predictive models with hiearchical data.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (HistGBM, Random Forest),
+              geospatial data (GIS), Census data, socioeconomics and health datasets, statistics, Python (Pandas, Numpy,
+              scikit-learn)</p>
+          </div>
+        </div>
+        <h3 class="project-name">A document similarity tool that saved 400-500 hours<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/thompson.png" alt="Document similarity image" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I made a tool to identify similar or duplicate medical documents, using their
+              text and metadata. Its first application was to suggest similar content from a large library, which is
+              projected to make a manual workflow 3x as fast and save humans 400-500 hours. It's also being used to
+              de-duplicate that library and to map internal content to external content. This project gave me hands-on
+              experience with Doc2Vec and vector and set similarity statistics.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Doc2Vec (Gensim), NLP (spaCy), statistics, Python
+              (Pandas, Numpy), Excel</p>
+          </div>
+        </div>
+        <h3 class="project-name">A data science tool that saved 1-2 years<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/cupid.svg" alt="Relationships graph" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I created a tool to help grow an ontology, which is a kind of tree of
+              relationships between concepts in medicine. An example of such a relationship is <i>[insulin] -treats->
+                [type 2 diabetes]</i>. These relationships are invaluable for powering APIs and search for medical
+              content, but they're laborious and expensive to create because of the expertise required. The tool I
+              built, called Cupid because it makes new relationships 💘, reads thousands of medical documents to find
+              concepts and relationships between them. It proposes statements for doctors to review. Having first drafts
+              generated by a machine saved an estimated 1-2 years compared with the doctors coming up with all these
+              relationships manually. The project educated me about some pitfalls to steer clear of when doing entity
+              recognition on medical text.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;NLP &amp; text mining (spaCy, Regex), Python
+              (Pandas, Numpy), SOLR API, Excel</p>
+          </div>
+        </div>
+        <h3 class="project-name">Metadata classification<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/classifier.jpg" alt="Classification image" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I created a hybrid system that assigns two kinds of metadata to patient education
+              documents, based on their titles. One piece of metadata is assigned by a machine learning model (text
+              classifier) trained to identify 70 possible categories of documents. The other piece of metadata, with
+              6000 possible categories, is assigned through text processing and a live taxonomy. I learned tons,
+              including how to track machine learning experiments more formally (MLFlow is rad!) and data augmentation
+              for text.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (Scikit-learn, MLFlow, random
+              forests, logistic regression), NLP &amp; text mining (spaCy, Regex), Python (Pandas, Numpy), SOLR API,
+              Excel</p>
+          </div>
+        </div>
+        <h3 class="project-name">White sharks and island rentals<br>
+        </h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/nantucket.jpg" alt="Nantucket landscape" style="width: 288px;">
+            </a>
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I worked as a consultant for Community Data Platforms. I helped scope a project
+              to track great white sharks, with the goal of surfacing insights for public safety and conservation. I
+              also trained a model to estimate prices for rental homes on Nantucket. The most memorable lesson for me
+              was a keen observation by an economist collaborator that markets may contain multiple sub-markets with
+              different dynamics.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;Machine learning (random forest, linear regression),
+              Python (Scikit-learn, Pandas, Numpy)</p>
+          </div>
+        </div>
+        <h3 class="project-name">Top 20% finish in machine learning competition about cancer<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <a href="https://www.kaggle.com/cparmet" target="_blank"> <img src="img/msk.png"
+                alt="MSK Personalized Medicine Kaggle Competition" style="width: 288px; height: 149px;">
+            </a>
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I built <a href="https://www.kaggle.com/cparmet" target="_blank"
+                title="Open my Kaggle profile">machine learning models</a> using natural language processing (NLP) to
+              predict the effects of different genetic mutations on cancer. The models worked by reading medical journal
+              articles. This Kaggle competition was run by Memorial Sloan Kettering to help them make progress on
+              techniques for personalized medicine. The competition taught me a boatload about the benefits of
+              labor-intensive cleaning of messy text, and nifty ML tricks shared by the generous community of
+              contestants.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Machine learning (XGboost, LASSO,
+              Elastic-net, Ridge, SVD, CV), NLP &amp;
+              text mining (TF-IDF, Regex), Python (Scikit-learn, Pandas, Numpy, Scipy)</p>
+          </div>
+        </div>
+        <h3 class="project-name">Triage chatbot discovery<br></h3>
+        <div class="resume-item d-flex flex-column flex-md-row mb-5">
+          <div class="resume-content mr-auto flex-sm-fill"> <br>
+            <img src="img/digital-health.jpg" alt="Clinical predictive models" style="width: 288px; height: 149px;">
+          </div>
+          <div class="resume-date text-md-right"> <br>
+            <p class="project-details">I collaborated with the innovation department at a academic medical center
+              partner to explore how to wire the brain of a chatbot to help triage patients. The exploration taught me
+              about triage pathways, the statistics of diagnosis tests, and the huge number of patient variables to
+              consider in evidence-based triage decisions.</p>
+            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Statistics, machine learning (CART), literature
+              reviews in medicine and computer science</p>
+          </div>
+        </div>
+
+        <h3 class="project-name"> Citation formatter with a twist</a> </h4>
           <div class="resume-item d-flex flex-column flex-md-row mb-5">
             <div class="resume-content mr-auto flex-sm-fill"> <br>
-              <img src="img/bella.jpg"
-
-                  alt="Bella logo" style="width: 288px;"></div>
+              <img src="img/bella.jpg" alt="Bella logo" style="width: 288px;">
+            </div>
             <div class="resume-date text-md-right"> <br>
-              <p class="project-details">I made a web app for Healthwise to format research citations in a house style. Colleagues use it in workflows several times a day. My favorite feature is a custom algorithm to convert the title of a journal article from Title Case to Sentence case. That's a challenge that commercial reference managers punt on, so it was great fun to work on. I learned gobs about NLP and deploying web apps to Amazon Web Services.</p>
+              <p class="project-details">I made a web app for Healthwise to format research citations in a house style.
+                Colleagues use it in workflows several times a day. My favorite feature is a custom algorithm to convert
+                the title of a journal article from Title Case to Sentence case. That's a challenge that commercial
+                reference managers punt on, so it was great fun to work on. I learned gobs about NLP and deploying web
+                apps to Amazon Web Services.</p>
               <p class="tools"><i class="fas fa-wrench"></i>&nbsp;NLP (NLTK, Truecasing), Text
                 mining, Python (Flask), Amazon Web Services (S3, Lambda), Biopython, PubMed API</p>
             </div>
           </div>
+      </div>
+      <h3 class="project-name">Predicting traffic jams<br>
+        </a></h3>
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto flex-sm-fill"> <br>
+          <a href="http://train.chadparmet.com" target="_blank"> <img src="img/trainingham.jpg" alt="Trainingham"
+              style="width: 288px;"> </a>
         </div>
-        <h3 class="project-name">Predicting traffic jams<br>
-          </a></h3>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto flex-sm-fill"> <br>
-            <a href="http://train.chadparmet.com" target="_blank"> <img src="img/trainingham.jpg"
+        <div class="resume-date text-md-right"> <br>
+          <p class="project-details">I was tired of getting stuck at a train crossing in Framingham, Massachusetts. So I
+            made Trainingham, a web app
+            to forecast the next time the commuter rail train will stop traffic at that intersection. The project taught
+            me the joys of real-time data.</p>
+          <p class="tools"><i class="fas fa-wrench"></i>&nbspPython (JSON parsing, Flask,
+            requests, datetime, pytz), AWS (S3, Lambda), time data, MBTA API</p>
+        </div>
+      </div>
+      <h3 class="project-name">Analtyics data: analyses and dashboards</h3>
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto flex-sm-fill"> <br>
+          <img src="img/powerbi.png" alt="PowerBI Logo" style="width: 288px;">
+        </div>
+        <div class="resume-date text-md-right"> <br>
+          <p class="project-details">I fulfilled staff and client requests for data analyses, PowerBI dashboards, and
+            reports on how Healthwise patient education is viewed, rated, and searched for. These projects showed me,
+            time and again, how critical it is for a data scientist to deeply understand the real world chain of events
+            that generates the numbers in a dataset, and to never forget to ask what data might be missing.</p>
+          <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;PowerBI, DAX, Microsoft SQL Server,
+            Excel, Python</p>
+        </div>
+      </div>
+      <h3 class="project-name">Web scraping to save $ on electricity<br>
+        </a></h3>
+      <div class="resume-item d-flex flex-column flex-md-row mb-5">
+        <div class="resume-content mr-auto flex-sm-fill"> <br>
+          <a href="https://github.com/cparmet/AutoVerde" target="_blank" title=" Open AutoVerde on GitHub">
+            <img src="img/autoverde.jpg" alt="Image of electricity rates" style="width: 288px;">
+          </a>
+        </div>
+        <div class="resume-date text-md-right"> <br>
+          <p class="project-details"> I wrote a Python script that monitored electricity prices every day and emailed me
+            if my supplier's rate went down, so I could get a cheaper contract. The little project taught me the wonders
+            of web scraping (I’m still tickled that you can automate filling out forms), and also the downsides of
+            scrapin' over time (you need to keep pace with changes made to the website you're scraping).</p>
+          <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Scraping & UI automation (Beautiful Soup,
+            Selenium), Python (Pandas, Flask, SendGrid, logging)</p>
+        </div>
+      </div>
+    </section>
+    <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="open-source">
+      <div class="my-auto">
+        <h2 class="mb-5">OPEN SOURCE CONTRIBUTIONS</h2>
+        <ul class="open-source-bullets">
+          <li>😊 <a href="https://github.com/cparmet/pandas-checks" target="_blank">Pandas Checks (2024-Present)</a>: Created Python package for data inspection and validation</li>
+          <li><a href="https://github.com/awsdocs/aws-doc-sdk-examples/pull/7049" target="_blank">AWS Code Examples (2024)</a>: Fixed instructions for running official chatbot demo</li>
+          <li>😊 <a href="https://github.com/cparmet/finite-news" target="_blank">Finite News (2023-Present)</a>: Created platform for making your own personalized, mindful, AI-assisted news emails</li>
+          <li><a href="https://github.com/scikit-learn/scikit-learn/issues/27737" target="_blank">Sci-Kit Learn (2023)</a>: Fixed docs for <code>HistGradientBoostingRegressor</code></li>
+          <li><a href="https://github.com/Nixtla/statsforecast/pull/699" target="_blank">StatsForecast (2023)</a>: Avoided a divide by zero warning</li>
+          <li><a href="https://github.com/biopython/biopython/pull/1522" target="_blank">Biopython (2018)</a>: Added the capability for its PubMed API functions to work in serverless deployments</li>
+        </ul>
+      </div>
+    </section>
 
-                alt="Trainingham" style="width: 288px;"> </a> </div>
-          <div class="resume-date text-md-right"> <br>
-            <p class="project-details">I was tired of getting stuck at a train crossing in Framingham, Massachusetts. So I made Trainingham, a web app
-              to forecast the next time the commuter rail train will stop traffic at that intersection. The project taught me the joys of real-time data.</p>
-            <p class="tools"><i class="fas fa-wrench"></i>&nbspPython (JSON parsing, Flask,
-              requests, datetime, pytz), AWS (S3, Lambda), time data, MBTA API</p>
-          </div>
-        </div>
-        <h3 class="project-name">Analtyics data: analyses and dashboards</h3>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto flex-sm-fill"> <br>
-            <img src="img/powerbi.png" alt="PowerBI Logo" style="width: 288px;">
-          </div>
-          <div class="resume-date text-md-right"> <br>
-            <p class="project-details">I fulfilled staff and client requests for data analyses, PowerBI dashboards, and reports on how Healthwise patient education is viewed, rated, and searched for. These projects showed me, time and again, how critical it is for a data scientist to deeply understand the real world chain of events that generates the numbers in a dataset, and to never forget to ask what data might be missing.</p>
-            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;PowerBI, DAX, Microsoft SQL Server,
-              Excel, Python</p>
-          </div>
-        </div>
-        <h3 class="project-name">Contributor to open source package for biomedical computing<br>
-          </h3>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto flex-sm-fill"> <br>
-            <a href="https://github.com/biopython/biopython/blob/master/CONTRIB.rst"
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+  </div>
+</body>
 
-              target="_blank" title="Open the list of Biopython contributors in a new window">
-              <img src="img/biopython.png" alt="Biopython" style="width: 288px;">
-            </a> </div>
-          <div class="resume-date text-md-right"> <br>
-            <p class="project-details">While building a web app that parses the medical literature, I
-              <a href="https://github.com/biopython/biopython/blob/master/CONTRIB.rst"
-
-            target="_blank" title="Open the list of Biopython contributors in a new window"
-
-            alt="Biopython">proposed a change to Biopython</a>, a widely used Python library
-              for biological computing. The accepted change enables a piece of Biopython to work on
-              server-less deployments, such as AWS Lambda and Google Cloud
-              Functions. Contributing to this open source project was a total joy and very educational. </p>
-            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Python (Biopython, unit testing), AWS (Lambda),
-              GitHub (pull requests, CI), PubMed API</p>
-          </div>
-        </div>
-        <h3 class="project-name">Web scraping to save $ on electricity<br>
-          </a></h3>
-        <div class="resume-item d-flex flex-column flex-md-row mb-5">
-          <div class="resume-content mr-auto flex-sm-fill"> <br>
-            <a href="https://github.com/cparmet/AutoVerde" target="_blank" title=" Open AutoVerde on GitHub">
-              <img src="img/autoverde.jpg" alt="Image of electricity rates" style="width: 288px;">
-            </a> </div>
-          <div class="resume-date text-md-right"> <br>
-            <p class="project-details"> I wrote a Python script that monitored electricity prices every day and emailed me if my supplier's rate went down, so I could get a cheaper contract. The little project taught me the wonders of web scraping (I’m still tickled that you can automate filling out forms), and also the downsides of scrapin' over time (you need to keep pace with changes made to the website you're scraping).</p>
-            <p class="tools"><i class="fas fa-wrench"></i>&nbsp;&nbsp;Scraping & UI automation (Beautiful Soup,
-              Selenium), Python (Pandas, Flask, SendGrid, logging)</p>
-          </div>
-        </div>
-      </section>
-      <!-- Bootstrap core JavaScript -->
-      <script src="vendor/jquery/jquery.min.js"></script>
-      <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-      <!-- Plugin JavaScript -->
-      <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-      <!-- Custom scripts for this template -->
-      <script src="js/resume.min.js"></script> </div>
-  </body>
 </html>
