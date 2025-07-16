@@ -112,9 +112,17 @@ p.lead {
   padding-left: 1rem;
 }
 
+.lessons {
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 350;
+  padding-left: 1rem;
+}
+
 .tools {
   font-family: 'Roboto';
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: left;
   font-weight: 350;
   padding-left: 1rem;
