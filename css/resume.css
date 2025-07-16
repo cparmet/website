@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Muli', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  padding-top: 54px;
+  padding-top: 54px; /* Keeps h1 from being obscured by navbar  */
   color: #868e96;
 }
 
@@ -78,7 +78,7 @@ p.lead {
 }
 
 .social-icons a:hover {
-  background-color: #BD5D38;
+  background-color: #4646e0;
 }
 
 .dev-icons {
@@ -86,7 +86,7 @@ p.lead {
 }
 
 .dev-icons .list-inline-item i:hover {
-  color: #BD5D38;
+  color: #4646e0;
 }
 
 .bio {
@@ -102,14 +102,27 @@ p.lead {
 }
 
 .project-details {
-  font-size: 1rem;
+  font-size: 1.3rem;
   text-align: justify;
+  padding-left: 1rem;
+}
+
+.open-source-bullets {
+  font-size: 1.3rem;
+  padding-left: 1rem;
+}
+
+.lessons {
+  font-family: 'Roboto';
+  font-size: 1.2rem;
+  text-align: left;
+  font-weight: 350;
   padding-left: 1rem;
 }
 
 .tools {
   font-family: 'Roboto';
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: left;
   font-weight: 350;
   padding-left: 1rem;
@@ -182,8 +195,8 @@ p.lead {
 }
 
 section.resume-section {
-  padding-top: 5rem !important;
-  padding-bottom: 5rem !important;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   max-width: 75rem;
 }
 
@@ -193,7 +206,7 @@ section.resume-section .resume-item .resume-date {
 
 @media (min-width: 768px) {
   section.resume-section {
-    min-height: 100vh;
+    min-height: 20vh;
   }
   section.resume-section .resume-item .resume-date {
     min-width: 18rem;
@@ -202,21 +215,21 @@ section.resume-section .resume-item .resume-date {
 
 @media (min-width: 992px) {
   section.resume-section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 
 .bg-primary {
-  background-color: #BD5D38 !important;
+  background-color: #4646e0 !important;
 }
 
 .text-primary {
-  color: #BD5D38 !important;
+  color: #4646e0 !important;
 }
 
 a {
-  color: #BD5D38;
+  color: #4646e0;
 }
 
 a:hover, a:focus, a:active {
