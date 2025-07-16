@@ -7,8 +7,10 @@
       var target = $(this.hash);
       target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
       if (target.length) {
+        // Offset by 70px on mobile screens
+        var offset = $(window).width() < 992 ? 70 : 0;
         $('html, body').animate({
-          scrollTop: (target.offset().top)
+          scrollTop: (target.offset().top - offset)
         }, 1000, "easeInOutExpo");
         return false;
       }
